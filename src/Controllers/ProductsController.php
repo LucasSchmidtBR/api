@@ -54,4 +54,29 @@ class ProductsController
             'data'    => $productService
         ], 201);
     }
+
+    public function update(Request $request, Response $response){
+
+    }
+
+    public function destroy(Request $request, Response $response, array $sku){
+
+        $productService = ProductService::deleteProduct($sku[0]);
+
+        if (isset($productService['error'])) {
+            return $response::json([
+                'error'   => true,
+                'success' => false,
+                'message' => $productService
+            ], 400);
+        }
+
+        $response::json([
+            'error'   => false,
+            'success' => true,
+            'data'    => $productService
+        ], 201);
+
+        return;
+    }
 }

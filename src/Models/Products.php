@@ -101,20 +101,20 @@ class Products extends Database
         return $stmt->rowCount() > 0 ? true : false;
     }
 
-    // public static function delete(int|string $id)
-    // {
-    //     $pdo = self::getConnection();
+    public static function delete(int|string $sku)
+    {
+        $pdo = self::getConnection();
 
-    //     $stmt = $pdo->prepare('
-    //         DELETE 
-    //         FROM 
-    //             users
-    //         WHERE 
-    //             id = ?
-    //     ');
+        $stmt = $pdo->prepare('
+            DELETE 
+            FROM 
+                test
+            WHERE 
+                sku = ?
+        ');
 
-    //     $stmt->execute([$id]);
+        $stmt->execute([$sku]);
 
-    //     return $stmt->rowCount() > 0 ? true : false;
-    // }
+        return $stmt->rowCount() > 0 ? true : false;
+    }
 }

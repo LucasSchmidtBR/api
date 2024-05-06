@@ -79,4 +79,14 @@ class ProductService
             return ['error' => $e->getMessage()];
         }
     }
+
+    public static function deleteProduct($sku)
+    {
+        $product = Products::delete($sku);
+
+
+        if(!$product) return ['error'=> 'Sorry, we could not delete.'];
+
+        return "Produto deletado";
+    }
 }
