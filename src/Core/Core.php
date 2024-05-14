@@ -3,6 +3,7 @@
 namespace App\Core;
 use App\Http\Request;
 use App\Http\Response;
+header('Access-Control-Allow-Origin: *');
 
 class Core
 {

@@ -8,7 +8,7 @@ use App\Utils\Validator;
 use Exception;
 use PDOException;
 
-
+header('Access-Control-Allow-Origin: *');
 class ProductService
 {
     public static function create(array $data)
@@ -22,6 +22,7 @@ class ProductService
                 'stock' => $data['stock'] ?? '',
                 'category' => $data['category'] ?? '',
                 'thumbnail' => $data['thumbnail'] ?? '',
+                'status'=> $data['status'] ??'',
 
             ]);
             

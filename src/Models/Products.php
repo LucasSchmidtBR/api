@@ -27,9 +27,9 @@ class Products extends Database
             $stmt = $pdo->prepare("
                 INSERT 
                 INTO 
-                    test (sku, description, price, stock, category, thumbnail)
+                    test (sku, description, price, stock, category, thumbnail, status)
                 VALUES
-                    (?, ?, ?, ?, ?, ?)
+                    (?, ?, ?, ?, ?, ?, ?)
                 ");
 
             $stmt->execute([
@@ -39,6 +39,7 @@ class Products extends Database
                 $data['stock'],
                 $data['category'],
                 $data['thumbnail'],
+                $data['status'],
             ]);
 
             return $pdo->lastInsertId() > 0 ? true : false;         
@@ -53,7 +54,7 @@ class Products extends Database
         $pdo = self::getConnection();
         $stmt = $pdo->prepare('
             SELECT
-                id, sku, description, price, stock, category, thumbnail
+                id, sku, description, price, stock, category, thumbnail, status
             FROM
                 test
             WHERE

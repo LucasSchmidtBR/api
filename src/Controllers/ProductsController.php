@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Http\Request;
 use App\Http\Response;
 use App\Services\ProductService;
+header('Access-Control-Allow-Origin: *');
 
 class ProductsController
 {
