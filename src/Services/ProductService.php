@@ -22,12 +22,15 @@ class ProductService
                 'stock' => $data['stock'] ?? '',
                 'category' => $data['category'] ?? '',
                 'thumbnail' => $data['thumbnail'] ?? '',
-                'status'=> $data['status'] ??'',
+
 
             ]);
             
 
             $products = Products::save($fields);
+
+            echo $products;
+
             if (!$products){
                 throw new Exception('Sorry, product already exists.');
             }

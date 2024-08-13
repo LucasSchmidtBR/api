@@ -4,7 +4,7 @@
 
 /* Database Credentials */
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'test');
+define('DB_HOST', 'mysql63-farm2.uni5.net');
+define('DB_USER', 'eletrocan');
+define('DB_PASS', 'Lucas2020');
+define('DB_NAME', 'products');
